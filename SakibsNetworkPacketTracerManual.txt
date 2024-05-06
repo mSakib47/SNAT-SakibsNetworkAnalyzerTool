@@ -1,0 +1,78 @@
+LIBRARIES REQUIRED TO RUN PROGRAM:
+tkinter
+PIL
+Scapy
+Matplotlib
+Nmap (It is also required to have the actual Nmap tool installed on your computer, aswell as the library)
+dpkt, socket, threading, sys, time
+
+MANUAL FOR SAKIBS NETWORK ANALYZER TOOL:
+
+Opening PCAP files:
+In the zip file there are three example PCAP files you can use to test the software.
+These PCAP files can be used with the packet analyzer button and graph generation.
+
+PCAP Protocol Counter:
+This button will count the amount of TCP and UDP packets in the PCAP file selected by user
+It will ask the user to input the range they want to check.
+
+Example PCAP files graph visualization:
+For the first pcap file it is recommended to use the following IP addresses:
+192.168.56.101
+192.168.56.104
+
+At the timestamp of 450, the amount of ports being accessed is very high suggesting that the user
+is scanning everysingle port on the network using an nmap scan.
+
+For the second pcap file it is recommended to use the following IP addresses:
+192.158.56.1
+192.168.56.101
+
+Normal user access and then a brute force attack occurs out of nowhere.
+
+For the third pcap file it is recommended to use the following IP addresses:
+192.168.56.1
+182.168.56.102
+
+Brute force attack using a specfic pattern of passwords occurs.
+
+Packet Sniffer:
+PLEASE DO NOT USE PACKET SNIFFER ON UNAUTHROISED NETWORKS.
+The software is intended for demonstration purposes and hence only works on test HTTP websites
+which are intentionally vulnerable and dont use HTTPS.
+
+Below are a couple intentionally vulnerable websites you can use:
+http://testphp.vulnweb.com/login.php
+http://vbsca.ca/login/login.asp
+
+For the packet sniffer it is required that you figure out the name of your network interface so
+the packet sniffer can understand which network interface it is meant to scan.
+The first method is to just use the default simple names of Ethernet or WiFi,
+however if this doesnt work it is required to find the exact name of the interface card using the steps below:
+
+To do this it is very simple, all you have to do is go to:
+Control panel, select Network and Sharing Center.
+Click change adapter settings.
+Select your network type e.g Ethernet/WiFi
+Click details button and it should say it in the description.
+Usually looks like:
+Realtek PCIe GbE Family Controller,
+Intel(R) Dual Band Wireless-AC 7260
+More information on https://support.lenovo.com/gt/en/solutions/ht078107-how-to-find-and-download-network-driver-windows
+
+Live graph visualization:
+This button will generate a live plot graph of the network you are connected to using matplotlib,
+The X-Axis represents the time in seconds and the
+Y-Axis represents the amount of packets being transmitted over the current network.
+
+Nmap Scan:
+It is required to have the actual Nmap installed on your computer aswell as the library. 
+Its a simple download on Windows from: https://nmap.org/download
+
+It will ask the user to input a valid IP address on their network that they want to scan
+Then it will scan the IP address from the protocol range 22-443
+and provide a list of open ports and the status of the IP address.
+
+It has a validation function which will test that a correct IP address is inputed
+It will also time out after 20 seconds if the port scan is taking too long.
+
